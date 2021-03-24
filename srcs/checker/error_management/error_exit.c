@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 16:13:43 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/24 17:37:32 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/24 17:27:14 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/24 17:28:08 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	main(int ac, char **av)
+void	error_exit(void)
 {
-	if (ac < 2 || all_args_valid(av, ac) == false)
-		error_exit();
-	return (0);	
+	write(2, "Error\n", 6);
+	exit(1);
 }
