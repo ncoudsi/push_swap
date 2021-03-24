@@ -55,7 +55,7 @@ $(NAME_2): 				libft/libft.a $(INCS_DIR) $(PUSH_SWAP_OBJS) Makefile
 						@$(CC) $(C_FLAGS) $(PUSH_SWAP_OBJS) $(L_FLAGS) -o $(NAME_2)
 
 clean:
-						@rm -rf $(PUSH_SWAP_OBJS_DIR) $(CHECKER_OBJS_DIR)
+						@rm -rf $(OBJS_DIR)
 
 fclean:						clean
 						@rm -f $(NAME_1) $(NAME_2)
