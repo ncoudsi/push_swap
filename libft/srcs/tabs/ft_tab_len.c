@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tab_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 14:13:14 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 13:28:57 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:42:21 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:42:30 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ size_t	ft_tab_len(void **tab)
 
 	result = 0;
 	if (tab == NULL)
-	{
-		return ((size_t)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-										FT_E_ARG));
-	}
+		return (0);
 	while (tab[result] != NULL)
 		result++;
 	return (result);

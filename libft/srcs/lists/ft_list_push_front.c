@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_upper.c                                      :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 12:25:38 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/14 15:36:22 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:09:53 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:09:54 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Checking if a character is an upper case alphabetic.
+**	Adding a node at the start of a linked list. See libft_list_node.h
+**	for further informations on t_list_node structure.
 */
 
-t_bool	ft_is_upper(char c)
+void	ft_list_push_front(t_list_node **list, t_list_node *node)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (true);
-	return (false);
+	if (list == NULL || node == NULL)
+		return ;
+	node->next = *list;
+	*list = node;
 }

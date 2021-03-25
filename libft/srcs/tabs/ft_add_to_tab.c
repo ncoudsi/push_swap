@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_to_tab.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 15:09:42 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:54:07 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:41:35 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:41:36 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_add_to_tab(void *to_add, void ***tab)
 	void	**tmp;
 
 	if (to_add == NULL || tab == NULL)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	tmp = *tab;
 	*tab = ft_tab_new(ft_tab_len(tmp) + 1);
 	if (tmp != NULL)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tab_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 14:14:19 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:55:27 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:42:04 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:42:13 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_tab_cpy(void **dst, void **src)
 
 	index = 0;
 	if (dst == NULL || src == NULL)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	while (src[index] != NULL)
 	{
 		dst[index] = src[index];

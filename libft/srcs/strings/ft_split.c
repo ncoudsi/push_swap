@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/10 10:57:07 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 15:07:02 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:21:54 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:27:22 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,17 +112,11 @@ char			**ft_split(char *src, char sep)
 	char	**result;
 
 	if (src == NULL || sep == '\0')
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return (NULL);
 	tab_size = word_count(src, sep);
 	result = (char **)ft_tab_new(tab_size);
 	if (result == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_MLC));
+		return (NULL);
 	fill_tab(result, src, sep, tab_size);
-	if (result == NULL)
-	{
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-							"malfunction of static function "
-							"void fill_tab(char **, char *, char, size_t)"));
-	}
 	return (result);
 }

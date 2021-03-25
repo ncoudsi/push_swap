@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/11 13:48:05 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 08:44:27 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:02:13 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:02:14 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@
 
 void	ft_putchar(char c)
 {
-	if (write(1, &c, 1) == -1)
-		ft_print_error(__PRETTY_FUNCTION__, __LINE__, "malfunction of write");
+	write(1, &c, 1);
 }

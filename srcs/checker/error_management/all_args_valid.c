@@ -6,32 +6,24 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 17:30:16 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/03/24 18:16:02 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/03/25 12:08:11 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static t_bool is_sign(char c)
-{
-	if (c == '-')
-		return (true);
-	return (false);
-}
-
 static t_bool	is_valid_arg(char *arg)
 {
 	int	index;
-	int	sign;
 
 	index = 0;
-	sign = 0;
-	while (arg[index] != '\0' && is_sign(arg[index]) == true)
+	if (arg[index] == '-')
 	{
-		sign++;
+		if (arg[index + 1] == '\0')
+			return (false);
 		index++;
 	}
-	if (sign > 1)
+	if (arg[index] == '0' && arg[index + 1] != '\0')
 		return (false);
 	while (arg[index] != '\0')
 	{
@@ -49,21 +41,21 @@ static t_bool	is_duplicate(char **args, int arg_index)
 	index = 1;
 	while (index < arg_index)
 	{
-		if (ft_strcmp(args[index], args[arg_index]) == true)
+		if (ft_atoi(args[index]) == ft_atoi(args[arg_index]))
 			return (true);
 		index++;
 	}
 	return (false);
 }
 
-t_bool	is_overflow(char *arg)
+static t_bool	is_overflow(char *arg)
 {
 	if (ft_strlen(arg) > 10 || atol(arg) > INT_MAX || atol(arg) < INT_MIN)
 		return (true);
 	return (false);
 }
 
-t_bool	all_args_valid(char **args, int args_nb)
+t_bool			all_args_valid(char **args, int args_nb)
 {
 	int	index;
 
@@ -72,9 +64,9 @@ t_bool	all_args_valid(char **args, int args_nb)
 	{
 		if (is_valid_arg(args[index]) == false)
 			return (false);
-		if (is_duplicate(args, index) == true)
-			return (false);
 		if (is_overflow(args[index]) == true)
+			return (false);
+		if (is_duplicate(args, index) == true)
 			return (false);
 		index++;
 	}

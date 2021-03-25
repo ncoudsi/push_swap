@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 13:39:13 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 15:08:10 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:37:31 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:37:34 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnew(size_t len)
 
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (result == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_MLC));
+		return (NULL);
 	index = 0;
 	while (index < len)
 	{

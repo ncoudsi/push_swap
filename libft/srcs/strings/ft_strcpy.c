@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/04 15:19:55 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 15:07:28 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:29:08 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:29:10 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strcpy(char *src, char *dest)
 
 	index = 0;
 	if (src == NULL || dest == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return (NULL);
 	while (src[index] != '\0')
 	{
 		dest[index] = src[index];

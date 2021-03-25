@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_malloc_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 09:46:35 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:10:26 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:15:24 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:15:55 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list_node	*ft_malloc_node(void *data)
 
 	result = (t_list_node *)malloc(sizeof(t_list_node));
 	if (result == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_MLC));
+		return (NULL);
 	result->data = data;
 	result->next = NULL;
 	return (result);

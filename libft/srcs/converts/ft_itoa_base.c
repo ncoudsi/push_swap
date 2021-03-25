@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 11:49:49 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/10/23 13:26:48 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 13:19:00 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 13:19:58 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ char			*ft_itoa_base(long long int nbr, char *base)
 	char					*result;
 	unsigned long long int	abs_nbr;
 
-	if (base == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
 	base_len = ft_strlen(base);
 	nbr_len = ft_nbrlen(nbr, base_len) - 1;
 	result = ft_strnew(nbr_len);
+	if (base == NULL)
+		return (NULL);
 	if (nbr < 0)
 	{
 		result[0] = '-';

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_count_c.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 10:55:11 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 15:07:14 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:29:02 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:29:03 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_str_count_c(char *str, char c)
 	result = 0;
 	index = 0;
 	if (str == NULL)
-		return ((int)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return (0);
 	while (str[index] != '\0')
 	{
 		if (str[index] == c)

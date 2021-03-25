@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_uppercase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 11:17:20 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 15:08:56 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 12:34:24 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 12:34:26 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	print_params(int ac, char *av[])
-{
-	int	i;
+/*
+**	Checking if a character is an upper case alphabetic.
+*/
 
-	i = 0;
-	while (i < ac)
-	{
-		ft_putnbr(i);
-		ft_putstr(" : ");
-		ft_putstr(av[i]);
-		ft_putstr("\n");
-		i++;
-	}
-}
-
-int			main(int argc, char *argv[])
+t_bool	ft_is_uppercase(char c)
 {
-	print_params(argc, argv);
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (true);
+	return (false);
 }

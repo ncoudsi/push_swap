@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rm_charset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 18:59:06 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 15:08:22 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:20:01 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:21:45 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ char			*ft_rm_charset(char *str, char *charset)
 	int		result_index;
 
 	if (str == NULL || charset == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return (NULL);
 	index = 0;
 	result_index = 0;
 	result = ft_strnew(len_without_charset(str, charset));
 	if (result == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_MLC));
+		return (NULL);
 	while (str[index] != '\0')
 	{
 		if (ft_is_char_in_str(str[index], charset) == false)

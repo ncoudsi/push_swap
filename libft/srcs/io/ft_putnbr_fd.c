@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 15:00:18 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 13:29:48 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:02:25 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:02:45 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 void	ft_putnbr_fd(int fd, int nbr)
 {
-	if (fd == -1)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+	if (fd < 0)
+		return ;
 	if (nbr < 0)
 	{
 		ft_putchar_fd(fd, '-');

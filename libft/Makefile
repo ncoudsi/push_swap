@@ -16,16 +16,15 @@ SRC 	=		ft_itoa_base.c ft_itoa.c ft_atoi.c ft_itoa_hexa.c ft_itoa_octa.c \
 				ft_strjoin.c ft_split.c ft_str_add_prefixe.c ft_str_add_suffix.c \
 				ft_str_count_c.c ft_strnstr.c \
 				\
-				ft_is_only_digits.c ft_is_digit.c ft_strcmp.c ft_is_charset_in_str.c \
-				ft_is_alpha.c ft_is_lower.c ft_is_upper.c ft_is_alpha_num.c \
+				ft_is_only_digits.c ft_is_digit.c ft_strcmp.c \
+				ft_is_alpha.c ft_is_lowercase.c ft_is_uppercase.c ft_is_alpha_num.c \
 				ft_is_char_in_str.c ft_is_white_space.c ft_is_valid_file_path.c\
 				\
-				ft_putchar.c ft_putchar_fd.c ft_putchar_fp.c \
-				ft_putstr.c ft_putstr_fd.c ft_putstr_fp.c \
-				ft_putnbr.c ft_putnbr_fd.c ft_putnbr_fp.c \
-				ft_print_str_tab.c ft_print_str_tab_fd.c ft_print_str_tab_fp.c\
-				ft_print_int_tab_fd.c ft_print_int_tab.c \
-				ft_error.c \
+				ft_putchar.c ft_putchar_fd.c \
+				ft_putstr.c ft_putstr_fd.c \
+				ft_putnbr.c ft_putnbr_fd.c \
+				ft_print_str_tab.c ft_print_str_tab_fd.c \
+				ft_print_int_tab.c ft_print_int_tab_fd.c \
 				\
 				ft_free_tab.c ft_tab_cpy.c ft_tab_new.c ft_tab_len.c \
 				ft_add_to_tab.c \
@@ -35,8 +34,8 @@ SRC 	=		ft_itoa_base.c ft_itoa.c ft_atoi.c ft_itoa_hexa.c ft_itoa_octa.c \
 				\
 				ft_get_next_line.c ft_get_file.c \
 				\
-				ft_list_add_back.c ft_list_clear.c ft_list_map.c \
-				ft_list_size.c ft_list_add_front.c ft_malloc_node.c \
+				ft_list_push_back.c ft_list_clear.c ft_list_map.c \
+				ft_list_size.c ft_list_push_front.c ft_malloc_node.c \
 				ft_list_iter.c ft_list_remove_node.c
 
 OBJ		=		$(addprefix $(OBJ_DIR)/, $(SRC:%.c=%.o))

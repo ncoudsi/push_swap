@@ -8,7 +8,8 @@ SRCS_DIR			=	$(shell find srcs -type d)
 PUSH_SWAP_SRCS_DIR	=	$(shell find srcs/push_swap -type d)
 CHECKER_SRCS_DIR	=	$(shell find srcs/checker -type d)
 
-CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c
+CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
+						# init_stack_a.c init_instructions.c
 
 PUSH_SWAP_SRCS		=	push_swap.c
 

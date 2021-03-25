@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str_tab.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:11:20 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 13:35:12 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 13:59:23 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:00:32 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		ft_print_str_tab(char *name, char **tab)
 
 	index = 0;
 	if (tab == NULL)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	line_offset = ft_nbr_len(ft_tab_len((void**)tab));
 	if (name != NULL)
 	{

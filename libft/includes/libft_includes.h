@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_includes.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 17:09:28 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 15:05:28 by ldutriez         ###   ########.fr       */
+/*   Updated: 2021/03/25 13:57:26 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include <fcntl.h>
 
 # include "libft_defines.h"
-# include "libft_error.h"
 # include "libft_list.h"
 # include "libft_file.h"
 # include "libft_convert.h"

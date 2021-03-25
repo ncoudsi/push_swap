@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_remove_node.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 09:51:44 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/10/23 14:09:48 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:12:56 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:14:25 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		ft_list_remove_node(t_list_node **list, size_t node_index,
 	t_list_node *tmp2;
 
 	if (list == NULL || *list == NULL)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	tmp1 = *list;
 	tmp2 = tmp1->next;
 	if (node_index == 0)
@@ -54,7 +54,7 @@ void		ft_list_remove_node(t_list_node **list, size_t node_index,
 		node_index--;
 	}
 	if (node_index > 1)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	tmp1->next = tmp2->next;
 	deleting(tmp2, destructor);
 	return ;

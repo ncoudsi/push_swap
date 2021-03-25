@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_only_digits.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/17 14:44:35 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:02:51 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 12:34:17 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 12:34:19 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ t_bool	ft_is_only_digits(char *str)
 
 	index = 0;
 	if (str == NULL)
-	{
-		return ((t_bool)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-										FT_E_ARG));
-	}
+		return (false);
 	while (str[index] != '\0')
 	{
 		if (ft_is_digit(str[index]) == false)

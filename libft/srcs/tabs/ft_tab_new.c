@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tab_new.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/14 14:11:26 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:55:55 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:42:38 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:42:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	**ft_tab_new(int size)
 
 	result = (void **)malloc(sizeof(void *) * (size + 1));
 	if (result == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_MLC));
+		return (NULL);
 	index = 0;
 	while (index < size)
 	{

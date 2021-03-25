@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 12:29:15 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 14:51:18 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:39:59 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:40:00 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@
 
 char	*ft_strstr(char *haystack, char *needle)
 {
-	if (haystack == NULL)
-		return (ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
 	return (ft_strnstr(haystack, needle, ft_strlen(haystack)));
 }

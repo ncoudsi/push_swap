@@ -3,36 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 10:59:27 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 13:54:02 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 13:37:09 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:45:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**	Creating a line from storage.
+**	Removing a line from storage, and keep the surplus.
 */
 
-static char	*create_line(char *storage)
-{
-	int		index;
-	char	*result;
-
-	index = 0;
-	while (storage[index] != '\0' && storage[index] != '\n')
-		index++;
-	result = ft_strsub(storage, 0, index);
-	return (result);
-}
-
-/*
-**	Removing a line from storage, so it remains only the surplus.
-*/
-
-static void	remove_line(char **storage)
+static void	remove_line_from_storage(char **storage)
 {
 	int		index;
 	char	*tmp;
@@ -51,58 +35,64 @@ static void	remove_line(char **storage)
 }
 
 /*
-**	Will add what have been read at the end of the storage
-**	until a new line or the end of file.
+**	Creating a line from storage.
 */
 
-static int	read_until_nl_or_eof(char **storage, char *buffer,
-									int *read_return, int fd)
+static char	*set_line(char *storage)
 {
-	while (ft_is_charset_in_str(*storage, "\n") == false
-		&& *read_return != IS_END_OF_FILE)
+	int		index;
+	char	*result;
+
+	index = 0;
+	while (storage[index] != '\0' && storage[index] != '\n')
+		index++;
+	result = ft_strsub(storage, 0, index);
+	return (result);
+}
+
+/*
+**	Store a line in the storage variable.
+*/
+
+static int	store_line(char **storage, char *buf, int *read_ret, int fd)
+{
+	while (ft_is_char_in_str('\n', *storage) == false
+		&& *read_ret != 0)
 	{
-		*read_return = read(fd, buffer, BUFFER_SIZE);
-		if (*read_return == IS_AN_ERROR)
-		{
-			return ((int)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-										FT_E_RD) - 1);
-		}
-		ft_str_add_suffix(storage, buffer);
+		*read_ret = read(fd, buf, BUFFER_SIZE);
+		if (*read_ret == -1)
+			return (-1);
+		ft_str_add_suffix(storage, buf);
 	}
-	free(buffer);
+	free(buf);
 	return (0);
 }
 
 /*
 **	Getting the next line of a file and store it in a string. We consider a line
 **	as an undefined number of characters terminated with '\n'. The function
-**	returns 1 if a line has been found, 0 if the enf of file has beem reached
-**	and -1 if an error occured.
+**	returns 1 if a line has been found, 0 if the end of file has been reached,
+**	or -1 if an error occured.
 */
 
 int			ft_get_next_line(int fd, char **line)
 {
 	static char	*storage = NULL;
 	char		*buffer;
-	int			read_return;
+	int			read_ret;
 
-	read_return = 1;
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
-	{
-		return ((int)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-									FT_E_ARG) - 1);
-	}
+		return (-1);
+	read_ret = 1;
 	buffer = ft_strnew(BUFFER_SIZE);
-	if (buffer == NULL)
+	if (buffer != NULL &&
+		store_line(&storage, buffer, &read_ret, fd) != -1)
 	{
-		return ((int)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-									FT_E_ARG) - 1);
+		*line = set_line(storage);
+		remove_line_from_storage(&storage);
+		if (read_ret == 0)
+			return (0);
+		return (1);
 	}
-	if (read_until_nl_or_eof(&storage, buffer, &read_return, fd) == -1)
-		return (IS_AN_ERROR);
-	*line = create_line(storage);
-	remove_line(&storage);
-	if (read_return == IS_END_OF_FILE)
-		return (IS_END_OF_FILE);
-	return (IS_A_LINE);
+	return (-1);
 }

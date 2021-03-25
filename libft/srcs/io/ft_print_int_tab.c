@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int_tab.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 21:00:33 by ldutriez          #+#    #+#             */
-/*   Updated: 2020/10/23 13:29:21 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 13:52:41 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 13:52:42 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_print_int_tab(char *name, int *tab, size_t len)
 
 	index = 0;
 	if (tab == NULL)
-		return ((void)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return ;
 	if (name != NULL)
 	{
 		ft_putchar('{');

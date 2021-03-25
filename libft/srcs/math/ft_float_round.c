@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/04 18:54:18 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/10/15 11:16:38 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/03/25 14:17:23 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:17:45 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ float	ft_float_round(float value)
 	roof = ft_float_roof(value);
 	if ((value - floor) < (roof - value))
 		return (floor);
-	else
-		return (roof);
+	return (roof);
 }

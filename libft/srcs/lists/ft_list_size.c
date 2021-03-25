@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 15:13:06 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/10/23 14:10:03 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:14:51 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:15:52 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_list_size(t_list_node *list)
 	int		result;
 
 	if (list == NULL)
-		return ((int)ft_print_error(__PRETTY_FUNCTION__, __LINE__, FT_E_ARG));
+		return (0);
 	result = 1;
 	while (list->next != NULL)
 	{

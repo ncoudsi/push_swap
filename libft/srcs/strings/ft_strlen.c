@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/30 14:01:19 by ncoudsi           #+#    #+#             */
-/*   Updated: 2020/10/23 14:41:28 by ldutriez         ###   ########.fr       */
+/*   Created: 2021/03/25 14:37:24 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/03/25 14:37:25 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ size_t		ft_strlen(char *src)
 
 	result = 0;
 	if (src == NULL)
-	{
-		return ((size_t)ft_print_error(__PRETTY_FUNCTION__, __LINE__,
-										FT_E_ARG));
-	}
+		return (0);
 	while (src[result] != '\0')
 		result++;
 	return (result);
