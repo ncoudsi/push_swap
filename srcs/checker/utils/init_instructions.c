@@ -6,20 +6,17 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:48:53 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/08 11:49:36 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/08 12:20:07 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-char	**init_instructions()
+void	init_instructions(t_list_node **instructions)
 {
-	char	**result;
-	char	*instruction;
+	char	*data;
 
-	result = NULL;
-	instruction = NULL;
-	while (ft_get_next_line(0, &instruction) > 0)
-		ft_add_to_tab((void *)instruction, (void ***)&result);
-	return (result);
+	data = NULL;
+	while (ft_get_next_line(0, &data) > 0)
+		ft_list_push_back(instructions, ft_malloc_node((void *)data));
 }

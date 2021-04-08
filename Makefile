@@ -10,6 +10,7 @@ CHECKER_SRCS_DIR	=	$(shell find srcs/checker -type d)
 
 CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
 						init_instructions.c all_instructions_valid.c \
+						init_stack_a.c \
 
 PUSH_SWAP_SRCS		=	push_swap.c
 

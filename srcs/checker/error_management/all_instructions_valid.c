@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:43:22 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/08 11:49:33 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/08 12:22:44 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@ static t_bool	is_instruction_valid(char *instruction)
 	return (true);
 }
 
-t_bool			all_instructions_valid(char **instructions)
+t_bool			all_instructions_valid(t_list_node *instructions)
 {
-	int	index;
-
-	index = 0;
-	while (instructions[index] != NULL)
+	while (instructions != NULL)
 	{
-		if (is_instruction_valid(instructions[index]) == false)
+		if (is_instruction_valid((char *)instructions->data) == false)
 			return (false);
-		index++;
+		instructions = instructions->next;
 	}
 	return (true);
 }
