@@ -2,7 +2,7 @@ NAME_1				=	checker
 NAME_2				=	push_swap
 
 CC					=	clang
-C_FLAGS				=	-Wall -Wextra -Werror
+C_FLAGS				=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 SRCS_DIR			=	$(shell find srcs -type d)
 PUSH_SWAP_SRCS_DIR	=	$(shell find srcs/push_swap -type d)
@@ -12,7 +12,8 @@ CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
 						init_instructions.c all_instructions_valid.c \
 						init_stack_a.c apply_instructions.c apply_sa.c \
 						apply_sb.c apply_ss.c apply_ra.c apply_rb.c apply_rr.c \
-						apply_pa.c apply_pb.c apply_rra.c apply_rrb.c apply_rrr.c
+						apply_pa.c apply_pb.c apply_rra.c apply_rrb.c apply_rrr.c \
+						check_stack_state.c free_stacks.c
 
 PUSH_SWAP_SRCS		=	push_swap.c
 

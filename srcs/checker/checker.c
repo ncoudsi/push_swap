@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:13:43 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 16:08:18 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 16:22:02 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(int ac, char **av)
 		error_exit();
 	init_stack_a(&stack_a, ac, av);
 	apply_instructions(instructions, &stack_a, &stack_b);
-	//is stack sorted ? >> KO || OK
-	//free_stacks
+	check_stack_state(stack_a);
+	free_stacks(stack_a, stack_b);
+	ft_list_clear(&instructions, free);
 	return (0);	
 }

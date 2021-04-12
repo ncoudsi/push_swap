@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:33:44 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 15:54:14 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 16:16:29 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ void		apply_rr(t_int_list_node **stack_a, t_int_list_node **stack_b);
 void		apply_rra(t_int_list_node **stack_a);
 void		apply_rrb(t_int_list_node **stack_b);
 void		apply_rrr(t_int_list_node **stack_a, t_int_list_node **stack_b);
+void		check_stack_state(t_int_list_node *stack_a);
+void		free_stacks(t_int_list_node *stack_a, t_int_list_node *stack_b);
 #endif
