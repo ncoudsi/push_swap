@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack_a.c                                     :+:      :+:    :+:   */
+/*   apply_ra.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 11:14:13 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 14:36:51 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 15:25:51 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/12 16:05:40 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	init_stack_a(t_int_list_node **stack_top, int ac, char **av)
+void	apply_ra(t_int_list_node **stack_a)
 {
-	int		arg_index;
-	int		data;
+	t_int_list_node	*start;
+	t_int_list_node	*tmp;
 
-	arg_index = 1;
-	while (arg_index < ac)
+	if (*stack_a != NULL && (*stack_a)->next != NULL)
 	{
-		data = (ft_atoi(av[arg_index]));
-		ft_int_list_push_back(stack_top, ft_malloc_int_node(data));
-		arg_index++;
+		start = *stack_a;
+		tmp = start->next;
+		*stack_a = tmp;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = start;
+		start->next = NULL;
 	}
 }
