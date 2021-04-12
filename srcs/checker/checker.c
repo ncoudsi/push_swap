@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:13:43 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/08 12:34:48 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/12 12:57:00 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int ac, char **av)
 {
-	t_list_node	*stack_a;
-	t_list_node	*stack_b;
-	t_list_node	*instructions;
+	t_int_list_node	*stack_a;
+	t_int_list_node	*stack_b;
+	t_list_node		*instructions;
 
 	stack_a = NULL;
 	stack_b = NULL;
