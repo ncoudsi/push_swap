@@ -15,7 +15,9 @@ CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
 						apply_push.c apply_reverse_rotate.c apply_rrr.c \
 						check_stacks_state.c free_stacks.c
 
-PUSH_SWAP_SRCS		=	push_swap.c
+PUSH_SWAP_SRCS		=	push_swap.c ft_atol.c all_args_valid.c \
+						all_instructions_valid.c error_exit.c free_stacks.c \
+						init_stack_a.c
 
 OBJS_DIR			=	objs
 PUSH_SWAP_OBJS_DIR	= 	push_swap

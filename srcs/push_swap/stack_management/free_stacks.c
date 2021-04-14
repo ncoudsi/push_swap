@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 11:09:56 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/14 12:16:36 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 16:15:54 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/12 16:17:49 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "checker.h"
 
-# include <limits.h>
-# include "libft.h"
+void	free_stacks(t_int_list_node *stack_a, t_int_list_node *stack_b)
+{
+	t_int_list_node	*tmp;
 
-long int	ft_atol(char *str);
-t_bool		all_args_valid(char **args, int args_nb);
-void		error_exit(void);
-void		init_stack_a(t_int_list_node **stack_top, int ac, char **av);
-t_bool		all_instructions_valid(t_list_node *instructions);
-void		free_stacks(t_int_list_node *stack_a, t_int_list_node *stack_b);
-#endif
+	while (stack_a != NULL)
+	{
+		tmp = stack_a;
+		stack_a = stack_a->next;
+		free(tmp);
+	}
+	while (stack_b != NULL)
+	{
+		tmp = stack_b;
+		stack_b = stack_b->next;
+		free(tmp);
+	}
+}
