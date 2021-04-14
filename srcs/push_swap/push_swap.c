@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:14:22 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/14 11:11:18 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/14 11:40:03 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ int	main(int ac, char **av)
 {
 	(void)ac;
 	(void)av;
-	return (0);
+	return (0);	
 }

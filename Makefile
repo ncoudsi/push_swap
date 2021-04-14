@@ -10,9 +10,9 @@ CHECKER_SRCS_DIR	=	$(shell find srcs/checker -type d)
 
 CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
 						init_instructions.c all_instructions_valid.c \
-						init_stack_a.c apply_instructions.c apply_sa.c \
-						apply_sb.c apply_ss.c apply_ra.c apply_rb.c apply_rr.c \
-						apply_pa.c apply_pb.c apply_rra.c apply_rrb.c apply_rrr.c \
+						init_stack_a.c apply_instructions.c apply_swap.c \
+						apply_ss.c apply_rotate.c apply_rr.c \
+						apply_push.c apply_reverse_rotate.c apply_rrr.c \
 						check_stacks_state.c free_stacks.c
 
 PUSH_SWAP_SRCS		=	push_swap.c

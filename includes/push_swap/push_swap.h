@@ -6,11 +6,14 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 11:09:56 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/14 11:09:59 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/14 11:40:14 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <limits.h>
+# include "libft.h"
 
 #endif

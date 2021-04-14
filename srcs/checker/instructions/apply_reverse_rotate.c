@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply_pb.c                                         :+:      :+:    :+:   */
+/*   apply_reverse_rotate.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 15:21:53 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/14 11:13:18 by ncoudsi          ###   ########.fr       */
+/*   Created: 2021/04/12 15:43:14 by ncoudsi           #+#    #+#             */
+/*   Updated: 2021/04/14 11:52:21 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	apply_pb(t_int_list_node **stack_a, t_int_list_node **stack_b)
+void	apply_reverse_rotate(t_int_list_node **stack)
 {
+	t_int_list_node	*start;
 	t_int_list_node	*tmp;
+	t_int_list_node	*previous_tmp;
 
-	if (*stack_a != NULL)
+	if (*stack != NULL && (*stack)->next != NULL)
 	{
-		tmp = *stack_a;
-		*stack_a = (*stack_a)->next;
-		tmp->next = *stack_b;
-		*stack_b = tmp;
+		start = *stack;
+		previous_tmp = start;
+		tmp = start->next;
+		while (tmp->next != NULL)
+		{
+			previous_tmp = tmp;
+			tmp = tmp->next;
+		}
+		*stack = tmp;
+		tmp->next = start;
+		previous_tmp->next = NULL;
 	}
 }
