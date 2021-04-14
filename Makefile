@@ -13,7 +13,7 @@ CHECKER_SRCS		=	checker.c error_exit.c all_args_valid.c ft_atol.c \
 						init_stack_a.c apply_instructions.c apply_sa.c \
 						apply_sb.c apply_ss.c apply_ra.c apply_rb.c apply_rr.c \
 						apply_pa.c apply_pb.c apply_rra.c apply_rrb.c apply_rrr.c \
-						check_stack_state.c free_stacks.c
+						check_stacks_state.c free_stacks.c
 
 PUSH_SWAP_SRCS		=	push_swap.c
 

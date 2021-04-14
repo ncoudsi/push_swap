@@ -6,7 +6,7 @@
 /*   By: ncoudsi <ncoudsi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 13:01:10 by ncoudsi           #+#    #+#             */
-/*   Updated: 2021/04/12 15:57:47 by ncoudsi          ###   ########.fr       */
+/*   Updated: 2021/04/14 11:14:02 by ncoudsi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	apply_instruction(char *data, t_int_list_node **stack_a,
 		apply_rrr(stack_a, stack_b);
 }
 
-void	apply_instructions(t_list_node *instructions,
+void		apply_instructions(t_list_node *instructions,
 						t_int_list_node **stack_a, t_int_list_node **stack_b)
 {
 	while (instructions != NULL)
